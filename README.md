@@ -2,8 +2,9 @@
 
 A command-line interface (CLI) tool written in Go for converting PDF files to images of various formats.
 
-[godoc.org/github.com/binaryshogun/pdftoimage](https://godoc.org/github.com/binaryshogun/pdftoimage) 
-[goreportcard.com/report/github.com/github.com/binaryshogun/pdftoimage](https://goreportcard.com/report/github.com/binaryshogun/pdftoimage)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Report Card](https://goreportcard.com/badge/gojp/goreportcard)](https://goreportcard.com/report/binaryshogun/pdftoimage)
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 ## Features
 
