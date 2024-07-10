@@ -44,5 +44,5 @@ func (s *Scanner) Scan(path string) (images []image.Image, err error) {
 		images[pageNumber] = img
 	}
 
-	return nil, nil
+	return
 }
