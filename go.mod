@@ -2,8 +2,6 @@ module github.com/binaryshogun/pdftoimage
 
 go 1.22
 
-toolchain go1.22.0
-
 require (
 	github.com/gen2brain/go-fitz v1.23.7
 	github.com/spf13/cobra v1.8.1
