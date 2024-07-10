@@ -15,7 +15,7 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "pdf-to-image",
+	Use:   "pdftoimage",
 	Short: "A tool to convert PDF file to images",
 	Long:  `A tool to convert PDF file to images in various formats.`,
 	Run: func(cmd *cobra.Command, args []string) {
