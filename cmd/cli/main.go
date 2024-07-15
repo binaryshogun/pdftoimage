@@ -1,10 +1,13 @@
-package cmd
+package main
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/binaryshogun/pdftoimage/pkg/converter"
+	"github.com/binaryshogun/pdftoimage/pkg/image/writer"
+	"github.com/binaryshogun/pdftoimage/pkg/pdf/converter"
+	"github.com/binaryshogun/pdftoimage/pkg/pdf/scanner"
+
 	"github.com/spf13/cobra"
 )
 
@@ -25,7 +28,11 @@ var rootCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		c := converter.NewConverter()
+		var (
+			s = scanner.NewScanner()
+			w = writer.NewWriter()
+			c = converter.NewConverter(s, w)
+		)
 
 		if err := c.Convert(pdfPath, outputDir, format); err != nil {
 			_, _ = fmt.Fprintf(os.Stderr, "Error converting PDF to images: %v\n", err)
@@ -36,16 +43,15 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-// Execute executes the root command.
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		_, _ = fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-		os.Exit(1)
-	}
-}
-
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&pdfPath, "pdf", "p", "", "Path to the PDF file")
 	rootCmd.PersistentFlags().StringVarP(&outputDir, "out", "o", "./images", "Output directory for images")
 	rootCmd.PersistentFlags().StringVarP(&format, "format", "f", "jpeg", "Output image format (jpeg, png, gif)")
+}
+
+func main() {
+	if err := rootCmd.Execute(); err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
 }

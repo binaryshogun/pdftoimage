@@ -4,7 +4,7 @@ A command-line interface (CLI) tool written in Go for converting PDF files to im
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/gojp/goreportcard)](https://goreportcard.com/report/binaryshogun/pdftoimage)
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/github/docs/actions/workflows/go.yml/badge.svg)
 
 ## Features
 

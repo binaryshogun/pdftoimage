@@ -1,19 +1,12 @@
-package pdf
+package scanner
 
 import (
 	"errors"
 	"fmt"
-	"github.com/gen2brain/go-fitz"
 	"image"
+
+	"github.com/gen2brain/go-fitz"
 )
-
-// Scanner - scanner for PDF documents.
-type Scanner struct{}
-
-// NewScanner creates new instance of *[Scanner].
-func NewScanner() *Scanner {
-	return &Scanner{}
-}
 
 // Scan scans the PDF file and converts it to the slice of images.
 func (s *Scanner) Scan(path string) (images []image.Image, err error) {
